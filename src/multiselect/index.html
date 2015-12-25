@@ -1,0 +1,29 @@
+<html>
+
+<head>
+</head>
+
+<body>
+
+  <select is="x-multiselect" id="multi" multiple>
+    <option selected>Wow!
+      <option selected>Wahnsinn!
+        <option>Wie cool!
+  </select>
+
+  <script src="../require.js"></script>
+  <script>
+    require(['../utils', 'index'], function(utils) {
+      var multi = document.getElementById('multi');
+      var link = utils.createSome('a', {'href': '#'}, 'Add some');
+      var i = 1;
+      link.addEventListener('click', function() {
+        multi.appendChild(utils.createSome('option', {}, 'Example ' + i));
+        i++;
+      });
+      document.body.appendChild(link);
+    });
+  </script>
+</body>
+
+</html>
