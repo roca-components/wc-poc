@@ -1,1 +1,1 @@
-import "./src/barchart";
+import "./src/list_counter";
