@@ -25,6 +25,37 @@
 	</ul>
 
 	<script src="dist/bundle.js"></script>
+
+	<!-- for illustration purposes only -->
+	<form>
+		<input type="text">
+		<button type="submit">add</button>
+	</form>
+	<script>
+(function() {
+
+var list = document.querySelector("ul");
+var form = document.querySelector("form");
+
+form.addEventListener("submit", onSubmit);
+
+function onSubmit(ev) {
+	ev.preventDefault();
+
+	var field = this.querySelector("input");
+	var txt = field.value;
+	field.value = "";
+
+	// NB: ideally updated contents are provided by the server
+	var item = document.createElement("li");
+	item.textContent = txt;
+	item.innerHTML = '<input type="checkbox"> ' + item.innerHTML;
+
+	list.appendChild(item);
+}
+
+}());
+	</script>
 </body>
 
 </html>

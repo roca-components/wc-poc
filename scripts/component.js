@@ -7,6 +7,10 @@ export default class CheckList extends HTMLUListElement {
 		this.insertBefore(this.counter, this.firstChild); // XXX: invalid; needs separate wrapper
 
 		this.update = this.update.bind(this);
+
+		// monitor content changes
+		let observer = new MutationObserver(this.update);
+		observer.observe(this, { childList: true });
 	}
 
 	attachedCallback() {
