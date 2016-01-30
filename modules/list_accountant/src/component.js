@@ -1,4 +1,4 @@
-import ListCounter from "../list_counter/component";
+import ListCounter from "list_counter";
 
 export default class ListAccountant extends ListCounter {
 	calculateResult() {

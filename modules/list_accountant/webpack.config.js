@@ -4,14 +4,17 @@
 let path = require("path");
 
 module.exports = {
-	entry: "./index.js",
+	entry: __dirname + "/src/index.js",
 	output: {
-		path: __dirname + "/dist",
+		path: path.resolve(__dirname + "/dist"),
 		filename: "bundle.js"
 	},
 	resolve: {
 		root: path.resolve("./node_modules")
 	},
+  externals: {
+    "list_counter": "ListCounter"
+  },
 	module: {
 		loaders: [{
 			loader: "babel-loader",

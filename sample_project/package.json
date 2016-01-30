@@ -1,0 +1,13 @@
+{
+  "name": "roca_sample_project",
+  "version": "0.0.1",
+  "description": "ROCA Components Demo Project",
+  "dependencies": {
+    "roca_barchart": "../modules/barchart",
+    "roca_list_accountant": "../modules/list_accountant",
+    "roca_list_counter": "../modules/list_counter"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
+}
