@@ -4,30 +4,52 @@
 <head>
 	<meta charset="utf-8">
 	<title>CheckList</title>
+	<style>
+body {
+	width: 80%;
+	margin: 0 auto;
+	font-family: sans-serif;
+}
+
+.panel {
+	padding: 0.5em;
+	background-color: #EEE;
+}
+
+ul.panel {
+	list-style-type: none;
+}
+	</style>
 </head>
 
 <body>
 	<h1>CheckList</h1>
 
-	<ul is="check-list">
+	<ul is="check-list" class="panel">
 		<li>
-			<input type="checkbox">
-			foo
+			<label>
+				<input type="checkbox">
+				foo
+			</label>
 		</li>
 		<li>
-			<input type="checkbox">
-			bar
+			<label>
+				<input type="checkbox">
+				bar
+			</label>
 		</li>
 		<li>
-			<input type="checkbox">
-			baz
+			<label>
+				<input type="checkbox">
+				baz
+			</label>
 		</li>
 	</ul>
 
 	<script src="dist/bundle.js"></script>
 
 	<!-- for illustration purposes only -->
-	<form>
+	<form class="panel">
 		<input type="text">
 		<button type="submit">add</button>
 	</form>
