@@ -7,7 +7,10 @@ module.exports = {
 	entry: "./index.js",
 	output: {
 		path: __dirname + "/dist",
-		filename: "bundle.js"
+		filename: "bundle.js",
+		// expose component
+		libraryTarget: "umd",
+		library: "CheckList"
 	},
 	resolve: {
 		root: path.resolve("./node_modules")
