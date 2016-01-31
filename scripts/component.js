@@ -6,20 +6,15 @@ export default class CheckList extends HTMLUListElement {
 		this.counter.className = "badge";
 		this.insertBefore(this.counter, this.firstChild); // XXX: invalid; needs separate wrapper
 
-		this.update = this.update.bind(this);
-
 		// monitor content changes
 		let observer = new MutationObserver(this.update);
 		observer.observe(this, { childList: true });
 	}
 
 	attachedCallback() {
-		this.update();
-		this.addEventListener("change", this.update);
-	}
-
-	detachedCallback() {
-		this.removeEventListener("change", this.update); // XXX: should not be necessary!?
+		let update = this.update.bind(this);
+		update();
+		this.addEventListener("change", update);
 	}
 
 	update() {
